@@ -28,4 +28,13 @@ const questions = [
       'Asmongold',
     ]
   ),
+  QuizQuestion(
+    'Who played at the 2026 Super Bowl Halftime Show'
+    , [
+      'Bad Bunny',
+      'Kid Rock',
+      'P Diddy',
+      'Justin Bieber',
+    ]
+  ),
 ];
