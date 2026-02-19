@@ -25,6 +25,8 @@ class _QuestionScreenState extends State<QuestionsScreen>{
 final currentQuestion = questions[0];
    return SizedBox(
     width: double.infinity,
+    child: Container(
+      margin:const EdgeInsets.all(30),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -40,6 +42,7 @@ AnswerButton(answerText: currentQuestion.answers[1], onTap: (){}),
 AnswerButton(answerText: currentQuestion.answers[2], onTap: (){}),
 AnswerButton(answerText: currentQuestion.answers[3], onTap: (){}),
     ],),
+    ),
    );
   }
 }
