@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:secondprojecc/answer_button.dart';
 import 'package:secondprojecc/data/questions.dart';
+import 'data/questions.dart';
 
 class QuestionsScreen extends StatefulWidget{
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key,
+  required this.onSelectedAnswer});
+
+  final void Function(String answer) onSelectedAnswer;
 
   @override
   State<QuestionsScreen> createState() {
@@ -12,17 +16,17 @@ class QuestionsScreen extends StatefulWidget{
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen>{
-  @override
-  Widget build(BuildContext context) {
-
-   return Text("Questions Screen");
+  var currentQuestionIndex = 0;
+  void answerQuestion(String selectedAnswer){
+    widget.onSelectedAnswer(selectedAnswer);
+    setState(() {
+      currentQuestionIndex++;
+    });
   }
-}
 
-class _QuestionScreenState extends State<QuestionsScreen>{
   @override
   Widget build(BuildContext context) {
-final currentQuestion = questions[0];
+final currentQuestion = questions[currentQuestionIndex];
    return SizedBox(
     width: double.infinity,
     child: Container(
