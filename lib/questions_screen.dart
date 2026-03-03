@@ -26,7 +26,7 @@ final currentQuestion = questions[0];
    return SizedBox(
     width: double.infinity,
     child: Container(
-      margin:const EdgeInsets.all(30),
+      margin:const EdgeInsets.all(25),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
     children: [
