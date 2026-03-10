@@ -28,7 +28,7 @@ class ResultsScreen extends StatelessWidget{
   Widget build(context)
   {
     final summaryData = getSummaryData();
-    final num TotalQuestions = getSummaryData().length;
+    final num totalQuestions = getSummaryData().length;
     final num correctQuestions = summaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
     }).length;
