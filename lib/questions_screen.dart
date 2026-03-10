@@ -27,6 +27,9 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
   @override
   Widget build(BuildContext context) {
 final currentQuestion = questions[currentQuestionIndex];
+    // shuffle the answer order so the correct one isn't always first
+    final shuffledAnswers = currentQuestion.getShuffledAnswers();
+
    return SizedBox(
     width: double.infinity,
     child: Container(
@@ -41,10 +44,12 @@ final currentQuestion = questions[currentQuestionIndex];
       )
       ),
       const SizedBox(height:30),
-AnswerButton(answerText: currentQuestion.answers[0], onTap: (){}),
-AnswerButton(answerText: currentQuestion.answers[1], onTap: (){}),
-AnswerButton(answerText: currentQuestion.answers[2], onTap: (){}),
-AnswerButton(answerText: currentQuestion.answers[3], onTap: (){}),
+      // build one button per answer
+      for (var answer in shuffledAnswers)
+        AnswerButton(
+          answerText: answer,
+          onTap: () => answerQuestion(answer),
+        ),
     ],),
     ),
    );

@@ -19,17 +19,29 @@ class _QuizState extends State<Quiz> {
 
   void chooseanswer(String answer){
     selectedAnswers.add(answer);
+    // move to results when we've answered all questions
     if (selectedAnswers.length == questions.length){
-  setState(() {
-  activeScreen = ResultsScreen(chosenAnswers: selectedAnswers,);
-});
+      setState(() {
+        activeScreen = ResultsScreen(
+          chosenAnswers: selectedAnswers,
+          onRestart: restartQuiz,
+        );
+      });
     }
   }
 
+  // show the questions screen, used by the start button
   Widget? activeScreen;
   void switchScreen() {
     setState(() {
       activeScreen = QuestionsScreen(onSelectedAnswer: chooseanswer);
+    });
+  }
+
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers.clear();
+      activeScreen = StartScreen(switchScreen);
     });
   }
 
