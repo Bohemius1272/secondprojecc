@@ -4,10 +4,10 @@ const questions = [
   QuizQuestion(
     'What is the #1 problem American youth is curently facing right now?'
     , [
-      'Hunger',
+      'Untied Shoelaces',
       'Poverty',
       'Famine',
-      'Untied Shoelaces',
+      'Hunger',
     ]
   ),
   QuizQuestion(
@@ -49,10 +49,10 @@ const questions = [
   QuizQuestion(
     'What will I be doing during the spring break?'
     , [
-      'Work on a new video',
+      'All of the above',
       'Watch Umamusume: Cinderella Gray',
       'Play GRID Autosport',
-      'All of the above',
+      'Work on a new video',
     ]
   ),
 ];
