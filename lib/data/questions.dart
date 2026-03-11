@@ -2,19 +2,19 @@ import 'package:secondprojecc/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'Can your ideas change the world?'
+    'What is the #1 problem American youth is curently facing right now?'
     , [
-      'Yes',
-      'No',
-      'Maybe',
-      'FLINT LOCKWOOD!!!',
+      'Hunger',
+      'Poverty',
+      'Famine',
+      'Untied Shoelaces',
     ]
   ),
   QuizQuestion(
     'Who lives in a pineapple under the sea?'
     , [
       'Spongebob Squarepants',
-      'Jeffrey Epstein',
+      'Sandy Cheeks',
       'Invader Zim',
       'My Uncle Simon',
     ]
@@ -35,6 +35,24 @@ const questions = [
       'Kid Rock',
       'P Diddy',
       'Justin Bieber',
+    ]
+  ),
+  QuizQuestion(
+    'What is the best programming language?'
+    , [
+      'Dart',
+      'Python',
+      'JavaScript',
+      'C++',
+    ]
+  ),
+  QuizQuestion(
+    'What will I be doing during the spring break?'
+    , [
+      'Work on a new video',
+      'Watch Umamusume: Cinderella Gray',
+      'Play GRID Autosport',
+      'All of the above',
     ]
   ),
 ];
