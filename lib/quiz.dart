@@ -17,14 +17,15 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   final List<String> selectedAnswers = [];
 
-  void chooseanswer(String answer){
+  void chooseanswer(String answer) {
     selectedAnswers.add(answer);
     // move to results when we've answered all questions
-    if (selectedAnswers.length == questions.length){
+    if (selectedAnswers.length == questions.length) {
       setState(() {
         activeScreen = ResultsScreen(
           chosenAnswers: selectedAnswers,
           onRestart: restartQuiz,
+          onRestartFirstQuestion: restartQuizDirect,
         );
       });
     }
@@ -45,6 +46,14 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  /// clear answers and go back to first question screen
+  void restartQuizDirect() {
+    setState(() {
+      selectedAnswers.clear();
+      activeScreen = QuestionsScreen(onSelectedAnswer: chooseanswer);
+    });
+  }
+
   @override
   void initState() {
     activeScreen = StartScreen(switchScreen);
@@ -53,7 +62,6 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-   
     return MaterialApp(
       home: Scaffold(
         body: Container(
